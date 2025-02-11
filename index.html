@@ -73,6 +73,12 @@
             0% { transform: translateY(0); opacity: 1; }
             100% { transform: translateY(-500px); opacity: 0; }
         }
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            animation: floatUp 3s ease-in-out;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -81,7 +87,7 @@
     <p>You are my sunshine and my happiness! 🌻</p>
 
     <div class="container">
-        <img src="https://images.app.goo.gl/vPcnKy7HWpyW5cFc9" alt="Sunflower Bouquet" class="bouquet">
+        <img src="https://i.imgur.com/hA0QXhB.png" alt="Sunflower Bouquet" class="bouquet">
         <button class="heart-btn" onclick="showMessage()">❤️</button>
     </div>
 
@@ -89,18 +95,17 @@
 
     <script>
         function showMessage() {
+            // Reveal the love message
             document.getElementById("loveMessage").classList.remove("hidden");
 
             // Create floating hearts
             for (let i = 0; i < 10; i++) {
                 let heart = document.createElement("div");
                 heart.innerHTML = "❤️";
-                heart.style.position = "absolute";
+                heart.classList.add("heart");
                 heart.style.left = Math.random() * window.innerWidth + "px";
                 heart.style.top = window.innerHeight + "px";
-                heart.style.fontSize = "30px";
                 heart.style.animation = "floatUp 3s ease-in-out";
-                heart.style.pointerEvents = "none"; // Prevent clicking
                 document.body.appendChild(heart);
 
                 setTimeout(() => heart.remove(), 3000);
