@@ -4,92 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For My Love, Rushika ❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            text-align: center;
-            font-family: 'Open Sans', sans-serif;
-            background-color: #ffe6f2;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff80ab, #ff4081);
+            color: #fff;
             margin: 0;
             padding: 0;
+            text-align: center;
             overflow: hidden;
         }
+
         h1 {
-            color: #ff3366;
-            margin-top: 60px;
-            font-size: 50px;
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Great Vibes', cursive;
+            font-size: 60px;
+            margin-top: 100px;
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
         }
+
         p {
             font-size: 22px;
-            color: #ff3366;
-            background-color: #ffffff;
-            padding: 12px 30px;
-            border-radius: 20px;
+            color: #ffeb3b;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 15px 40px;
+            border-radius: 25px;
+            margin-top: 20px;
+            font-weight: bold;
             display: inline-block;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
+
         .container {
             position: relative;
-            margin-top: 40px;
+            margin-top: 50px;
         }
+
         .heart-btn {
-            font-size: 30px;
-            padding: 15px 35px;
+            font-size: 35px;
+            padding: 20px 50px;
             border: none;
             cursor: pointer;
-            border-radius: 50%;
-            background-color: #ff3366;
-            color: white;
+            border-radius: 50px;
+            background-color: #ffeb3b;
+            color: #ff4081;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            transition: transform 0.3s ease-in-out;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease-in-out;
         }
+
         .heart-btn:hover {
-            transform: translate(-50%, -50%) scale(1.2);
+            background-color: #ff4081;
+            color: #fff;
+            transform: translate(-50%, -50%) scale(1.1);
         }
-        .heart-btn:active {
-            transform: translate(-50%, -50%) scale(1);
-        }
+
         .hidden {
             display: none;
         }
+
         .love-message {
-            font-size: 28px;
-            color: #ff3366;
+            font-size: 30px;
+            color: #ff80ab;
             margin-top: 30px;
             animation: fadeIn 2s ease-in-out;
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Great Vibes', cursive;
         }
+
         @keyframes fadeIn {
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
+
         @keyframes floatUp {
             0% { transform: translateY(0); opacity: 1; }
-            100% { transform: translateY(-500px); opacity: 0; }
+            100% { transform: translateY(-300px); opacity: 0; }
         }
+
         .heart {
             position: absolute;
-            font-size: 30px;
+            font-size: 40px;
             animation: floatUp 3s ease-in-out;
             pointer-events: none;
+        }
+
+        .floating-hearts {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: floating 1s infinite alternate;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-30px); }
         }
     </style>
 </head>
 <body>
 
-    <h1>Hi My Love, Rushika! ❤️</h1>
-    <p>You are my sunshine and my happiness! 🌻</p>
+    <h1>For My Love, Rushika ❤️</h1>
+    <p>You are the light of my life and my everything! 🌟</p>
 
     <div class="container">
         <button class="heart-btn" onclick="showMessage()">❤️</button>
     </div>
 
-    <p class="love-message hidden" id="loveMessage">I Love You More Than Anything in This World! ❤️</p>
+    <p class="love-message hidden" id="loveMessage">I Love You More Than Words Can Express! ❤️</p>
+
+    <div class="floating-hearts">
+        <span>❤️</span>
+        <span>❤️</span>
+        <span>❤️</span>
+        <span>❤️</span>
+    </div>
 
     <script>
         function showMessage() {
@@ -97,15 +130,15 @@
             document.getElementById("loveMessage").classList.remove("hidden");
 
             // Create floating hearts
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 15; i++) {
                 let heart = document.createElement("div");
                 heart.innerHTML = "❤️";
                 heart.classList.add("heart");
                 heart.style.left = Math.random() * window.innerWidth + "px";
                 heart.style.top = window.innerHeight + "px";
-                heart.style.animation = "floatUp 3s ease-in-out";
                 document.body.appendChild(heart);
 
+                // Remove heart after animation
                 setTimeout(() => heart.remove(), 3000);
             }
         }
