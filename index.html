@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love, Rushika ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #fff0f5;
+            overflow: hidden;
+        }
+        h1 {
+            color: #ff4d4d;
+            margin-top: 30px;
+            font-size: 40px;
+        }
+        p {
+            font-size: 20px;
+            color: white;
+            background-color: #ff4d4d;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .container {
+            position: relative;
+            margin-top: 20px;
+        }
+        .bouquet {
+            width: 200px;
+            height: auto;
+            animation: float 3s infinite alternate ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-20px); }
+        }
+        .heart-btn {
+            font-size: 25px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: red;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .heart-btn:hover {
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+        .hidden {
+            display: none;
+        }
+        .love-message {
+            font-size: 24px;
+            color: #ff4d4d;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hi My Love, Rushika! ❤️</h1>
+    <p>You are my sunshine and my happiness! 🌻</p>
+
+    <div class="container">
+        <img src="https://i.imgur.com/GBs2HxO.png" alt="Sunflower Bouquet" class="bouquet">
+        <button class="heart-btn" onclick="showMessage()">❤️</button>
+    </div>
+
+    <p class="love-message hidden" id="loveMessage">I Love You More Than Anything in This World! ❤️</p>
+
+    <script>
+        function showMessage() {
+            document.getElementById("loveMessage").classList.remove("hidden");
+        }
+    </script>
+
+</body>
+</html>
